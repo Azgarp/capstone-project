@@ -23,15 +23,16 @@ A JUnit test is used to test some functionality.
 - Hibernate
 - MySQL
 # Roles and Responsibilities
-1. Worked on all modules of the project.
+1. Developed Receptionist module and worked on all modules of the project.
 2. Utilized Github to manage the source code.
 3. Worked on Spring Tool Suite and Eclipse IDE.
-4. Used HTML, CSS, JavaScript for creating interactive website.
+4. Used HTML, CSS, JavaScript, BootStrap for creating interactive website.
 5. Used JSP for creating dynamic web pages.
-6. Applied server technologies Servlet, Spring MVC, Spring Boot, Spring JPA.
-7. Used Hibernate as ORM framework.
-8. Worked on Spring Data JPA for SQL operations.
-9. Tested code using JUnit.
+6. Used Hibernate as ORM framework.
+7. Worked on Spring Data JPA for SQL operations.
+8. Tested code using JUnit.
+9. Applied Spring Security for login, logout and roles based authorization 
+10. Applied Server Technologies Spring Boot, Spring JPA, Spring MVC, Hibernate and Restful API for Server side implementation
 # Contributors
 - Sayeed Dadapeer
 - Jagadeesh
