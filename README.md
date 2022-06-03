@@ -13,6 +13,7 @@ A JUnit test is used to test some functionality.
 - Spring Data JPA
 - Spring Security
 - Spring MVC
+- Microservices
 - Restful API
 - HTML
 - CSS
