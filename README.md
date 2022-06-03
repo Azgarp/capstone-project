@@ -1,5 +1,5 @@
 # Hotel Management System
-Under The Hotel Management System (HMS) Each Group will have below moduels under Hotel Management System Project- Each group comprising of 4 to 5 associates- 1. Admin Module to add Users - This module will be developed by (1) or (2) associates in group 2. Receptionist Module - This module will be developed by (1) or (2) associates in group 3. Customer Module - This module will be developed by 1 associate in group 4. Report Module - This module will be developed by 1 associate in group The complete Java Full Stack Application to be developed using Springboot and Frontend technologies.
+Under The Hotel Management System (HMS) Each Group will have below moduels under Hotel Management System Project- Each group comprising of 6 to 4 associates- 1. Admin Module to add Users - This module will be developed by (1) or (2) associates in group 2. Receptionist Module - This module will be developed by (1) or (2) associates in group 3. Customer Module - This module will be developed by 1 associate in group 4. Report Module - This module will be developed by 1 associate in group The complete Java Full Stack Application to be developed using Springboot and Frontend technologies.
 
 # Requirements
 Functionality should reflect the below user stories.
