@@ -1,0 +1,7 @@
+package com.revature.hotel_management_system.admin_login_config;
+
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+
+public class adminAppConfiguration extends WebSecurityConfigurerAdapter {
+
+}

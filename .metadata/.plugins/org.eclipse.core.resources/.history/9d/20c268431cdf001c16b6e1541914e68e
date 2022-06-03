@@ -1,0 +1,33 @@
+package com.revature.hotel_management_system.login_config;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import com.revature.hotel_management_system.model.ReceptionistLogIn;
+import com.revature.hotel_management_system.repo.ReceptionistRepo;
+
+@Service
+public class ReceptionistUserDetailsService implements UserDetailsService {
+	
+	@Autowired
+	ReceptionistRepo receptionistRepo;
+
+	@Override
+	public UserDetails loadUserByUsername(String emailId) throws UsernameNotFoundException {
+		
+		ReceptionistLogIn receptionist=receptionistRepo.findById(emailId).orElse(null);
+		
+		if(receptionist==null) {
+			throw new UsernameNotFoundException("User Not Found");
+		}
+		
+		UserDetails user=User.withUsername(receptionist.getEmailId()).password(receptionist.getPassword()).authorities("ADMIN").roles("ADMIN").build();
+		
+		return user;
+	}
+
+}

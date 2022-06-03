@@ -1,0 +1,25 @@
+package com.revature.hotel_management_system.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.revature.hotel_management_system.model.Customer;
+import com.revature.hotel_management_system.model.Receptionist;
+import com.revature.hotel_management_system.repo.CustomerRepo;
+import com.revature.hotel_management_system.repo.ReceptionistRepo;
+
+@Service
+public class AddReceptionistService {
+	
+	@Autowired
+	ReceptionistRepo receptionistRepo;
+	
+	public List<Receptionist> showAllCustomers(){
+		List<Receptionist> receptionists=(List<Receptionist>) receptionistRepo.findAll();
+		System.out.println(receptionists);
+		return receptionists;
+	}
+
+}

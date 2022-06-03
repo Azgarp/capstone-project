@@ -1,0 +1,23 @@
+package com.revature.hotel_management_system.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.revature.hotel_management_system.model.AdminLogin;
+import com.revature.hotel_management_system.repo.AdminRepo;
+
+@Service
+public class AdminLogInService {
+	
+	@Autowired
+	private AdminRepo adminRepo;
+	
+	
+	public AdminLogin logIn(AdminLogin adminLogin) {
+		
+		adminLogin=adminRepo.findById(adminLogin.getEmailId()).orElse(null);
+		return adminLogin;
+		
+	}
+
+}

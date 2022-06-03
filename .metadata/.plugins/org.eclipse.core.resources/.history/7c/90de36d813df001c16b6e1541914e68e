@@ -1,0 +1,19 @@
+package com.revature.hotel_management_system.admin_repo;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+import com.revature.hotel_management_system.model.Admin;
+import com.revature.hotel_management_system.model.AdminLogin;
+import com.revature.hotel_management_system.model.Customer;
+
+@Repository
+public interface AdminRepo extends CrudRepository<AdminLogin, String> {
+
+	void save(Admin admin);
+	
+	Admin findByUserEmail(String userEmail);
+	
+
+}

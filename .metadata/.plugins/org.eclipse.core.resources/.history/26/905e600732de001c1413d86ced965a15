@@ -1,0 +1,29 @@
+package com.revature.hotel_management_system.login_config;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
+import org.springframework.stereotype.Component;
+
+import com.revature.hotel_management_system.services.ReceptionistLogInService;
+
+@Component
+public class AuthenticationSuccessHandlerImpl implements AuthenticationSuccessHandler {
+
+	@Autowired
+	ReceptionistLogInService rLoginService;
+	@Override
+	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
+			Authentication authentication) throws IOException, ServletException {
+		request.setAttribute("rname",rLoginService.getReceptionistName((String) request.getAttribute("emailId")));
+        response.sendRedirect("/receptionist/dashboard.jsp");
+	}
+
+}

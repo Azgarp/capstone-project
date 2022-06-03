@@ -1,0 +1,45 @@
+package com.revature.hotel_management_system.admin_controllers;
+
+import java.util.Objects;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.revature.hotel_management_system.admin_model.AdminLogin;
+import com.revature.hotel_management_system.admin_services.AdminLogInService;
+
+@Controller
+public class AdminLoginController {
+	
+	@Autowired
+	private AdminLogInService adminLogInService;
+	@GetMapping("/login")
+	public ModelAndView login() {
+		ModelAndView mv=new ModelAndView("admin.jsp");
+		mv.addObject("adminLogin",new AdminLogin());
+		return mv;
+	}
+	
+	@PostMapping("/login")
+	public ModelAndView login(@ModelAttribute("adminLogin") AdminLogin adminLogin) {
+		
+		ModelAndView mv;
+		AdminLogin adminLogInThis=adminLogInService.logIn(adminLogin);
+		if(Objects.nonNull(adminLogin) && adminLogin.getPassword().equals(adminLogInThis.getPassword())) {
+			mv=new ModelAndView("admin-dashboard.jsp");
+			mv.addObject("rname",adminLogInThis.getName());
+		}
+		else {
+			mv=new ModelAndView("admin.jsp");
+			mv.addObject("wrong_credentials","Wrong Credentials");
+		}
+		return mv;
+	}
+
+}

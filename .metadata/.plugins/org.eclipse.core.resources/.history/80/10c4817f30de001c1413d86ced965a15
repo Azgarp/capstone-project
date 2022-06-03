@@ -1,0 +1,24 @@
+package com.revature.hotel_management_system.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.revature.hotel_management_system.model.ReceptionistLogIn;
+import com.revature.hotel_management_system.repo.ReceptionistRepo;
+
+@Service
+public class ReceptionistLogInService {
+	
+	@Autowired
+	private ReceptionistRepo receptionistRepo;
+	
+	
+	public ReceptionistLogIn logIn(@RequestParam("receptionistLogIn") ReceptionistLogIn receptionistLogIn) {
+		
+		receptionistLogIn=receptionistRepo.findById(receptionistLogIn.getEmailId()).orElse(null);
+		return receptionistLogIn;
+		
+	}
+
+}
